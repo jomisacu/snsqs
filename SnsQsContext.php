@@ -173,7 +173,7 @@ class SnsQsContext implements Context
         $this->getSqsContext()->close();
     }
 
-    private function getSnsContext(): SnsContext
+    public function getSnsContext(): SnsContext
     {
         if (null === $this->snsContext) {
             $context = call_user_func($this->snsContextFactory);
@@ -187,7 +187,7 @@ class SnsQsContext implements Context
         return $this->snsContext;
     }
 
-    private function getSqsContext(): SqsContext
+    public function getSqsContext(): SqsContext
     {
         if (null === $this->sqsContext) {
             $context = call_user_func($this->sqsContextFactory);
